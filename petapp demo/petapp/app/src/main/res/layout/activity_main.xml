@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 固定背景圖 -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        android:contentDescription="背景"
+        android:alpha="1.0" />
+
+    <!-- 捲動內容 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/pet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的寵物"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/white"
+                android:padding="8dp"
+                android:elevation="2dp">
+
+                <TextView android:text="飢餓" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <ProgressBar
+                    android:id="@+id/hunger_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+
+                <TextView android:text="快樂" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <ProgressBar
+                    android:id="@+id/happiness_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+
+                <TextView android:text="體力" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <ProgressBar
+                    android:id="@+id/energy_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/pet_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pet_happy" />
+
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="狀態顯示"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:background="#D0D0D0"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/feed_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🍎 餵食"
+                    android:background="@drawable/rounded_button_feed" />
+
+                <Button
+                    android:id="@+id/play_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎮 玩耍"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_button_play" />
+
+                <Button
+                    android:id="@+id/sleep_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="😴 睡覺"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_button_sleep" />
+            </LinearLayout>
+
+            <!-- 顯示/隱藏排程區塊按鈕 -->
+            <Button
+                android:id="@+id/toggle_schedule_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="顯示提醒設定"
+                android:layout_marginTop="16dp" />
+
+            <!-- 排程區塊（預設隱藏） -->
+            <LinearLayout
+                android:id="@+id/schedule_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="設定提醒：" />
+
+                <EditText
+                    android:id="@+id/schedule_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="輸入提醒訊息" />
+
+                <TimePicker
+                    android:id="@+id/schedule_time_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:timePickerMode="spinner" />
+
+                <Button
+                    android:id="@+id/set_schedule_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="設定提醒"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

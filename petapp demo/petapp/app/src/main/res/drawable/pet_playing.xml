@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- 身體 -->
+    <path
+        android:fillColor="#32CD32"
+        android:pathData="M50,80 Q50,50 100,50 Q150,50 150,80 L150,140 Q150,170 100,170 Q50,170 50,140 Z" />
+
+    <!-- 眼睛 (星星眼) -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M80,85 L82,90 L87,90 L83,93 L85,98 L80,95 L75,98 L77,93 L73,90 L78,90 Z" />
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M120,85 L122,90 L127,90 L123,93 L125,98 L120,95 L115,98 L117,93 L113,90 L118,90 Z" />
+
+    <!-- 嘴巴 (大笑) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M75,115 Q100,145 125,115 Q100,135 75,115" />
+
+    <!-- 興奮的線條 -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFD700"
+        android:strokeWidth="3"
+        android:pathData="M40,40 L55,55 M45,35 L60,50 M160,40 L145,55 M155,35 L140,50" />
+</vector>
